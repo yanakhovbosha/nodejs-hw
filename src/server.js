@@ -25,11 +25,6 @@ app.use(
 app.use(express.json());
 app.use(cors());
 
-app.post('/notes', (req, res) => {
-  console.log(req.body);
-  res.status(201).json({ message: 'Note created' });
-});
-
 app.get('/notes', (req, res) => {
   res.status(200).json({ message: 'Retrieved all notes' });
 });
@@ -51,7 +46,6 @@ app.use((err, req, res, next) => {
   console.error('Error', err.message);
   res.status(500).json({
     message: 'Simulated server error',
-    error: err.message,
   });
 });
 
