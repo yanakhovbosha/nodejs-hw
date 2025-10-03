@@ -10,16 +10,13 @@ import noteRoutes from './routes/notesRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3030;
-app.use(logger);
 
 app.use(express.json());
 app.use(cors());
 
-app.use(noteRoutes);
+app.use(logger);
 
-app.get('/test-error', () => {
-  throw new Error('Simulated server error');
-});
+app.use(noteRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

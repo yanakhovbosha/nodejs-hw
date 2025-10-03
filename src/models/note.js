@@ -4,18 +4,18 @@ const noteSchema = new Schema(
   {
     title: {
       type: String,
-      require: true,
+      required: true,
       trim: true,
     },
     content: {
       type: String,
-      require: false,
+      required: false,
       default: '',
       trim: true,
     },
     tag: {
       type: String,
-      require: false,
+      required: false,
       enum: [
         'Work',
         'Personal',
