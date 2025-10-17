@@ -22,7 +22,7 @@ const userSchema = new Schema(
 
 userSchema.pre('save', function (next) {
   if (!this.username) {
-    this.username === this.email;
+    this.username = this.email;
   }
   next();
 });
