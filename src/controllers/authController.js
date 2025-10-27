@@ -153,6 +153,7 @@ export const resetPassword = async (req, res, next) => {
   });
   if (!user) {
     next(createHttpError(404, 'User not found'));
+    return;
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
